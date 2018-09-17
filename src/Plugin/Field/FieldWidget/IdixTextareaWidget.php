@@ -18,7 +18,7 @@ use Drupal\Core\Field\FieldItemListInterface;
  *   }
  * )
  */
-class IdixTextareaWidget extends TextLongItem {
+class IdixTextareaWidget extends TextareaWidget {
 
   /**
    * {@inheritdoc}
