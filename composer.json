@@ -22,11 +22,41 @@
           "type": "zip"
         }
       }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ckeditor/notification",
+        "version": "4.7.1",
+        "type": "drupal-library",
+        "dist": {
+          "url": "http://download.ckeditor.com/notification/releases/notification_4.7.1.zip",
+          "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "ckeditor/fakeobjects",
+        "version": "4.6.2",
+        "type": "drupal-library",
+        "extra": {
+          "installer-name": "fakeobjects"
+        },
+        "dist": {
+          "url": "http://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.6.2.zip",
+          "type": "zip"
+        }
+      }
     }
   ],
   "require": {
     "drupal/core": "8.*",
     "ckeditor/wordcount": "1.16",
-    "drupal/ckwordcount": "^1.0"
+    "ckeditor/fakeobjects": "4.6.2",
+    "ckeditor/notification": "4.7.1",
+    "drupal/ckwordcount": "^1.0",
+    "drupal/notification": "^1.0"
   }
 }
