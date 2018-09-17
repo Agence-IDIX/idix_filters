@@ -22,7 +22,7 @@
           "type": "zip"
         }
       }
-    },
+    }
   ],
   "require": {
     "drupal/core": "8.*",
