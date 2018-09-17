@@ -3,7 +3,7 @@
 namespace Drupal\idix_filters\Plugin\Field\FieldWidget;
 
 use Drupal\field\Entity\FieldConfig;
-use Drupal\text\Plugin\Field\FieldWidget\TextareaWithSummaryWidget;
+use Drupal\text\Plugin\Field\FieldWidget\TextareaWidget;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 
