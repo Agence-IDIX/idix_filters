@@ -1,0 +1,33 @@
+# Schema for the configuration files of the text module.
+
+field.widget.settings.text_idix_textarea_with_summary:
+  type: mapping
+  label: 'Text area with a summary display format settings'
+  mapping:
+    wordcount_enable:
+      type: boolean
+      label: 'Enable the counter'
+    wordcount_showParagraphs:
+      type: boolean
+      label: 'Show the paragraphs count'
+    wordcount_showWordCount:
+      type: boolean
+      label: 'Show the word count'
+    wordcount_showCharCount:
+      type: boolean
+      label: 'Show the character count'
+    wordcount_countSpacesAsChars:
+      type: boolean
+      label: 'Count spaces as characters'
+    wordcount_countHTML:
+      type: boolean
+      label: 'Count HTML as characters'
+    wordcount_override_field:
+      type: string
+      label: 'Limite de carctères surchargée par un champ limitation'
+    wordcount_maxWordCount:
+      type: integer
+      label: 'Maximum word limit'
+    wordcount_maxCharCount:
+      type: integer
+      label: 'Maximum character limit'

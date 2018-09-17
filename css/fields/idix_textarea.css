@@ -1,0 +1,7 @@
+.cke_error {
+    border: 1px solid red !important;
+}
+
+.cke_success {
+    border: 1px solid #00b100 !important;
+}

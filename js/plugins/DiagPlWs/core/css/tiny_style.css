@@ -1,0 +1,109 @@
+img { 
+    width: auto !important; 
+    height: auto !important; 
+}
+body, td, pre {
+    font-size:13px;
+}
+h3[melodyStyle="intertitre"] {
+    font-size:18px;
+    font-weight:normal;
+}
+h3[melodyStyle="exergue"] {
+    font-size:18px;
+    font-weight:bold;
+    border:1px solid black;
+    border-width: 1px 0px 1px 0px;
+}
+h3[melodyStyle="exempletitre"] {
+    font-size:14px;
+    font-weight:bold;
+}
+h3[melodyStyle="exemple"] {
+    font-size:10px;
+}
+h3[melodyStyle="titreparagraphe"] {
+    font-size:16px;
+}
+h3[melodyStyle="introduction"] {
+    font-size:14px;
+    font-weight:bold;
+}
+h3[melodyStyle="liste"] {
+    margin-left:20px;
+}
+h3[melodyStyle="texte_puce"] {
+    font-size:13px;
+    font-weight:normal;
+    display: list-item;
+    list-style-position: inside;
+    list-style-type: square;    
+}
+h3[melodyStyle="petitsurtitre"] {
+    font-size:18px;
+    color:#808080;
+    font-weight:normal;
+}
+h3[melodyStyle="petittitre"] {
+    font-size:16px;
+    color:#8B0000;
+    font-weight:normal;
+}
+h3[melodyStyle="grandtitre"] {
+    font-size: 18px;
+    font-weight: normal;
+}
+h3[melodyStyle="question"] {
+    font-size: 18px;
+    font-weight: normal;
+}
+h3[melodyStyle="reponse"] {
+    font-size: 18px;
+    font-weight: normal;
+}
+h3[melodyStyle="lettrine2"] {
+    font-size: 18px;
+    font-weight: normal;
+}
+h3[melodyStyle="lettrine3"] {
+    font-size: 18px;
+    font-weight: normal;
+}
+h3[melodyStyle="lettrine5"] {
+    font-size: 18px;
+    font-weight: normal;
+}
+h3[melodyStyle="lettrine8"] {
+    font-size: 18px;
+    font-weight: normal;
+}
+h3[melodyStyle="lettrine12"] {
+    font-size: 18px;
+    font-weight: normal;
+}
+.mce-content-body span[melodycharstyle="smallcaps"] {
+    font-size: 0.75em;
+    text-transform: uppercase;
+}
+
+/** Styles pour un affichage correct des style Melody dans la fenêtre de correction de ProLexis WebService **/
+.diagplws h3[melodyStyle="petitsurtitre"] {
+    font-size:18px;
+    color:#808080;
+    font-weight:normal;
+}
+.diagplws h3[melodyStyle="petittitre"] {
+    font-size:16px;
+    color:#8B0000;
+    font-weight:normal;
+}
+.diagplws h3[melodyStyle="intertitre"], .diagplws h3[melodyStyle="exergue"],
+.diagplws h3[melodyStyle="exempletitre"], .diagplws h3[melodyStyle="exemple"],
+.diagplws h3[melodyStyle="titreparagraphe"], diagplws h3[melodyStyle="introduction"],
+.diagplws h3[melodyStyle="texte_puce"], .diagplws h3[melodyStyle="grandtitre"],
+.diagplws h3[melodyStyle="question"], .diagplws h3[melodyStyle="reponse"],
+.diagplws h3[melodyStyle="lettrine2"], .diagplws h3[melodyStyle="lettrine3"],
+.diagplws h3[melodyStyle="lettrine5"], .diagplws h3[melodyStyle="lettrine8"],
+.diagplws h3[melodyStyle="lettrine12"] {
+    color: #000000;
+}

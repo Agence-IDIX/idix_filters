@@ -1,0 +1,639 @@
+/**
+* Surchage des styles JQueryUI
+*/
+
+/* open-sans-regular - latin */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('fonts/open-sans-v15-latin-regular.eot'); /* IE9 Compat Modes */
+	src: local('Open Sans Regular'), local('OpenSans-Regular'),
+	url('fonts/open-sans-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('fonts/open-sans-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+	url('fonts/open-sans-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+	url('fonts/open-sans-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+	url('fonts/open-sans-v15-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+/* open-sans-600 - latin */
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 600;
+	src: url('fonts/open-sans-v15-latin-600.eot'); /* IE9 Compat Modes */
+	src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+	url('fonts/open-sans-v15-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	url('fonts/open-sans-v15-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+	url('fonts/open-sans-v15-latin-600.woff') format('woff'), /* Modern Browsers */
+	url('fonts/open-sans-v15-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+	url('fonts/open-sans-v15-latin-600.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+.diagplws .ui-widget, .diagplws .ui-widget input {
+    font-family: 'Open Sans', "Helvetica", sans-serif;
+}
+
+.diagplws .ui-widget-content, .diagplws .ui-widget-header {
+	background-image: none;
+	border: none;
+}
+
+.diagplws .ui-widget-content {
+	color: #000000;
+}
+
+.diagplws .ui-dialog, .diagplws .ui-dialog .ui-dialog-content {
+	padding: 0;
+}
+
+.diagplws .ui-widget-header {
+	font-weight: normal;
+}
+
+.diagplws .ui-dialog-titlebar {
+	/* Les éléments avec !important servent à corriger des bugs graphiques constatés dans Melody de Publiatis */
+	background: #ffffff url("../imgs/bg_titlebar.png") no-repeat left top !important;
+	background-size: 2500px 48px !important;
+	background: #ffffff url("../imgs/bg_titlebar.png") no-repeat left top;
+	background-size: 2500px 48px;
+}
+
+.diagplws .ui-dialog .ui-dialog-title {
+	font-size: 17pt;
+	line-height: 22pt;
+}
+
+.Diagplws_content .ui-button-text-only .ui-button-text,
+.Diagplws_content .ui-button-text-icon-primary .ui-button-text,
+.Diagplws_content .ui-button-text-icons .ui-button-text,
+.Diagplws_content .ui-button-text-icon-secondary .ui-button-text,
+.Diagplws_content .ui-button-text-icons .ui-button-text{
+	padding-top: 1px;
+	padding-bottom: 1px;
+	font-size: 9pt;
+	line-height: 18px;
+}
+
+.diagplws .ui-dialog-titlebar .ui-button-icon-only {
+	background-image: none;
+}
+
+.diagplws .ui-state-default, .diagplws .ui-widget-content .ui-state-default {
+	background-color: transparent;
+	border: none;
+}
+
+.diagplws .ui-state-default .ui-icon {
+	background-image: url("../imgs/ic_clear_white_24dp_1x.png");
+	background-position: top left;
+	left: 0;
+	margin-left: 0;
+	top: 0;
+	margin-top: 0;
+}
+.diagplws .ui-dialog .ui-dialog-titlebar-close, .diagplws .ui-icon {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	float: right;
+	top: 6px;
+	right: 0px;
+	margin: 0px;
+	box-shadow: none;
+}
+
+.diagplws .ui-state-highlight,
+.diagplws .ui-widget-content .ui-state-highlight,
+.diagplws .ui-widget-header .ui-state-highlight {
+	border: none;
+	background-color: #00a8e1;
+}
+
+/* z-index par défaut */
+.diagplws .ui-front {
+	z-index: 200001;
+}
+
+.diagplws {
+	box-sizing: content-box;
+}
+
+/* Sur mac, on est obligé de forcer la hauteur de la ligne */
+.diagplws, .Diagplws_content{
+	line-height: 18px;
+}
+
+#Diagplws_correctionUI{
+	padding: 2px 0px 0px 0px;
+	overflow: hidden;
+	background-color: #ffffff;
+	float: none;
+}
+
+#Diagplws_containerui {
+	width: 1089px;
+}
+
+.Diagplws_content {
+	display: block;
+	text-align: center;
+	background-color: #f4f4f4;
+}
+
+#Diag_errors_container {
+	font-size: 9pt;	
+	margin: 5px;
+}
+
+.Diagplws_errorList_panel, .Diagplws_diagnosis_panel, .Diagplws_props_panel, .Diagplws_correction_panel {
+	margin: 0 2px 0 0;
+	border-left: 3px solid #c9c9c9;
+}
+
+.Diagplws_col_central {
+	float: left;
+	width: 196px;
+}
+
+.Diagplws_diagnosis, .Diagplws_correction, .Diagplws_props_panel .Diagplws_props-middle {
+	height: 84px;
+}
+
+.Diagplws_props_panel .Diagplws_props-middle {
+	padding-bottom: 36px;
+}
+
+.Diagplws_props {
+	height: 120px;
+}
+
+
+
+/**
+* Les différents styles des bandeaux de titre
+*/
+.Diagplws_content .Diagplws_legend {
+	margin: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	color: #000000;
+	background-color: #c9c9c9;
+	line-height: 17px;
+	font-size: 14px;
+	overflow: hidden;
+	transition: line-height 1s, padding-bottom 1s, color 200ms ease-out 500ms;
+	transition-timing-function: ease-out;
+	font-weight: 600;
+}
+
+.Diagplws_content .Diagplws_legend-collapsed {
+	overflow: hidden;
+	color: transparent;
+	line-height: 0px;
+	padding-bottom: 0px;
+ 	transition: line-height 1s, color 500ms, padding-bottom 1s;
+	transition-timing-function: ease-out;
+}
+
+
+/**
+* Partie des anomalies détectées
+*/
+.Diagplws_errorList_panel {
+	float: left;
+	width: 193px;
+	height: 765px;
+	border-color: #bacfe2;
+}
+
+.Diagplws_errorList_panel .Diagplws_legend {
+	background-color: #bacfe2;
+}
+
+.Diagplws_errorList {
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+	width: auto;
+	/* Pour que la fonction erreur.offsetTop réponde correctement. */
+	position: relative;
+	/* Pour forcer Safari à afficher la scrollbar, sûrement un bug lié à l'utilisation de position */
+	z-index: 200001;
+}
+
+.Diagplws_errorOrtho{
+	color: #0017fd;
+}
+.Diagplws_errorGram{
+	color: #ff0008;
+}
+.Diagplws_errorTypo{
+	color: #178f50;
+}
+.Diagplws_errorContext{
+	color: #1279b7;
+}
+.Diagplws_errorFrequency{
+	color: #9c4989;
+}
+.Diagplws_errorPress{
+	color: #9e5309;
+}
+.Diagplws_errorinactive {
+	color: #e5e5e5;
+}
+/* Erreur sélectionnée */
+.Diagplws_LabelHighlight{
+	color: #ffffff;
+}
+
+/** Gestion des pseudo caractéres **/
+.Diagplws_pseudo-del, .Diagplws_pseudo-nbsp, .Diagplws_pseudo-sp, .Diagplws_pseudo-ensp, .Diagplws_pseudo-thinsp, .Diagplws_pseudo-othersp {
+	width: 12px;
+	height: 15px;
+	background: url(../imgs/pseudo-characters.gif) no-repeat;
+	overflow: hidden;
+}
+.Diagplws_pseudo-del{
+	background-position: -48px -2px;
+}
+.Diagplws_pseudo-nbsp{
+	background-position: -12px 0px;
+}
+.Diagplws_pseudo-ensp{
+	background-position: -24px 2px;
+}
+.Diagplws_pseudo-thinsp{
+	background-position: -36px 2px;
+}
+.Diagplws_pseudo-othersp {
+	background-position: -60px 2px;
+}
+
+.Diagplws_errorList .ui-state-highlight .Diagplws_pseudo-del{
+	background-position: -48px -17px;
+}
+.Diagplws_errorList .ui-state-highlight .Diagplws_pseudo-nbsp{
+	background-position: -12px -17px;
+}
+.Diagplws_errorList .ui-state-highlight .Diagplws_pseudo-sp{
+	background-position: 0px -17px;
+}
+.Diagplws_errorList .ui-state-highlight .Diagplws_pseudo-ensp{
+	background-position: -24px -13px;
+}
+.Diagplws_errorList .ui-state-highlight .Diagplws_pseudo-thinsp{
+	background-position: -36px -13px;
+}
+.Diagplws_errorList .ui-state-highlight .Diagplws_pseudo-othersp{
+	background-position: -60px -13px;
+}
+
+/** Gestion des pseudo caractéres dans les propositions **/
+.Diagplws_props .Diagplws_pseudo-del{
+	background-position: -48px -33px;
+}
+.Diagplws_props .Diagplws_pseudo-nbsp{
+	background-position: -12px -32px;
+}
+.Diagplws_props .Diagplws_pseudo-sp{
+	background-position: 0px -33px;
+}
+.Diagplws_props .Diagplws_pseudo-ensp{
+	background-position: -24px -31px;
+}
+.Diagplws_props .Diagplws_pseudo-thinsp{
+	background-position: -36px -31px;
+}
+.Diagplws_props .Diagplws_pseudo-othersp{
+	background-position: -60px -31px;
+}
+
+/** Erreur inactive **/
+.Diagplws_errorinactive .Diagplws_pseudo-del{
+	background-position: -48px -47px;
+}
+.Diagplws_errorinactive .Diagplws_pseudo-nbsp{
+	background-position: -12px -48px;
+}
+.Diagplws_errorinactive .Diagplws_pseudo-sp{
+	background-position: 0px -49px;
+}
+.Diagplws_errorinactive .Diagplws_pseudo-ensp{
+	background-position: -24px -46px;
+}
+.Diagplws_errorinactive .Diagplws_pseudo-thinsp{
+	background-position: -36px -46px;
+}
+.Diagplws_errorinactive .Diagplws_pseudo-othersp{
+	background-position: -60px -46px;
+}
+
+
+/**
+* Partie diagnostics
+*/
+.Diagplws_diagnosis {
+	background-color: inherit;
+	font-size: 13px;
+}
+/* Quand on a peu de propositions, on utilise la classe Diagplws_props-middle pour centrer verticalement */
+.Diagplws_diagnosis, .Diagplws_props-middle, .Diagplws_correction {
+	display: table-cell;
+	vertical-align: middle;
+	width: 196px;
+}
+
+
+/**
+* Partie Propositions
+*/
+.Diagplws_props {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.Diagplws_props_panel, .Diagplws_correction_panel {
+	border-color: #bfe0ba;
+}
+
+.Diagplws_props_panel .Diagplws_legend, .Diagplws_correction_panel .Diagplws_legend {
+	background-color: #bfe0ba;
+}
+
+.Diagplws_prop-container {
+	position: relative;
+}
+
+.diagplws .ui-widget .Diagplws_prop_button, .diagplws .ui-widget .Diagplws_propmultiple_button {
+	height: auto;
+	text-transform: none;
+}
+
+.diagplws .ui-widget .Diagplws_prop_button {
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #ffffff;
+	font-weight: 600;
+	color: #3d8c12;
+}
+
+.diagplws .Diagplws_prop-container .Diagplws_propmultiple_button {
+	z-index: 200002;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #a2c99b;
+	color: #ffffff;
+	border-radius: 5px 0 0 5px;
+	border-left: 1px solid #ffffff;
+	min-width: 35px;
+	visibility: hidden;
+}
+.diagplws .Diagplws_prop-container:hover .Diagplws_propmultiple_button {
+	visibility: visible;
+}
+
+.Diagplws_props .Diagplws_prop_button:hover {
+	background-color: #e2f2e2;
+}
+
+
+/**
+* Partie Correction
+*/
+.Diagplws_correction{
+	overflow: hidden;
+	background-color: #e2f2e2;
+}
+
+/* Conteneur mdl d'un input text */
+.Diagplws_correction .mdl-textfield {
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.diagplws .Diagplws_correction_input {
+	border: none;
+	line-height: 30px;
+	height: 30px; /* Obligatoire pour IE */
+	border-radius: 4px;
+	text-align: center;
+	text-shadow: none;
+	width: auto;
+}
+
+.diagplws .Diagplws_correction_button {
+	line-height: 18px;
+	padding: 0 8px;
+	font-size: 12px;
+	background-color: #7cb270;
+	color: #ffffff;
+	width: 96px;
+	border-radius: 0 0 5px 5px;
+}
+
+.diagplws .Diagplws_correction_button[disabled][disabled] {
+	background-color: #e2f2e2;
+}
+.diagplws .Diagplws_correction_button:hover {
+	background-color: #bfe0ba;
+}
+
+.diagplws .Diagplws_group_ignore .Diagplws_correction_button {
+	background-color: #828282;
+}
+.diagplws .Diagplws_group_ignore .Diagplws_correction_button:hover {
+	background-color: #c9c9c9;
+}
+.diagplws .Diagplws_group_ignore .Diagplws_correction_button[disabled][disabled], .diagplws .Diagplws_group_ignore .Diagplws_correction_button.mdl-button--disabled.mdl-button--disabled {
+	background-color: #f4f4f4;
+}
+
+#Diagplws_ignorer_btn, #Diagplws_correction_btn {
+	margin-right: 2px;
+}
+
+
+/**
+* Partie des explications
+*/
+#Diagplws_explanationui {
+	float: right;
+	overflow: hidden;
+	border-left: 3px solid #efdd92;
+}
+
+#Diagplws_explanationui .Diagplws_legend {
+	background-color: #efdd92;
+}
+
+/**
+* Partie du document hôte
+*/
+#Diagplws_hostdocument, .Diagplws_footer_panel {
+	width: 586px;
+	margin-right: 2px;
+}
+
+#Diagplws_hostdocument {
+	/* La définition d'une position est quasi-obligatoire pour le scroll sur les erreurs
+	   En effet, les offsets de position sont données par rapport à offsetParent (parent positionné le plus proche)*/
+	position: relative;	
+	box-sizing: border-box;
+	height: 190px;
+	margin-top: 2px;
+	border-top: 2px solid #f4f4f4;
+	border-right: 2px solid #f4f4f4;
+	border-left: 2px solid #f4f4f4;
+	overflow: scroll;
+	background-color: #ffffff;
+	background-image: none;
+	color: #000000;
+	text-align: left;
+	float: left;
+	margin-top: 2px;
+}
+
+.Diagplws_stream, .Diagplws_lbl {
+	font-family: Verdana, "Trebuchet MS", Tahoma;
+	background-image: none;
+	font-size: 14px;
+	line-height: 1.4em;
+	padding: 0.8em;
+}
+
+.Diagplws_stream {
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+pre.Diagplws_stream {
+	white-space: pre-wrap;
+}
+.Diagplws_stream p {
+	margin: 0.2em 0 0.2em 0;
+}
+
+.Diagplws_lbl {
+	color: rgba(0,0,0, 0.54);
+	background-color: #f3f3f3;
+	padding-top: 0.4em;
+	padding-bottom: 0.4em;
+}
+
+.DiagPlWs_error {
+	color: #ffffff;
+}
+
+/* Eléments ignorés pendant la phase de corrections */
+.Diagplws_stream .Diagplws_ignoreanalysis {
+	display: none;
+}
+
+
+/**
+* Partie footer
+*/
+.Diagplws_footer_panel {
+	float: left;
+	background-color: #f4f4f4;
+}
+
+.Diagplws_sliderpanel {
+	width: 240px;
+	height: 34px;
+	float: right;	
+}
+
+.Diagplws_slidercontainer {
+	width: 200px;
+	float: left;
+	height: 34px;
+	padding-top: 9px;
+}
+
+.Diagplws_lettericon {
+	float: left;
+	line-height: 34px;
+	height: 34px;
+	font-size: 28px;
+	color: #989898;
+}
+.Diagplws_lettericon-small {
+	font-size: 15px;
+}
+
+
+/**
+* Affichage des messages à l'utilisateur
+*/
+.Diagplws_messageContainer {
+	min-height: 40px;
+}
+.Diagplws_msg {
+	text-align: center;
+	margin-top: 20px
+}
+
+
+/**
+* Menu
+*/
+#Diagplws_menu-btn {
+	background-image: url(../imgs/ic_menu_white_24dp_1x.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 260px;
+}
+
+.diagplws .mdl-menu__container.is-visible .mdl-menu, .diagplws .mdl-menu__container.is-visible .mdl-menu__outline {
+	z-index: 999
+}
+
+.diagplws .mdl-menu__container.is-visible .mdl-menu, .diagplws .mdl-menu__container.is-visible .mdl-menu__item,
+.diagplws .mdl-menu__container.is-visible .mdl-menu__outline {
+	opacity: 1;
+}
+
+.diagplws .mdl-menu__container.is-visible .mdl-menu__outline {
+	transform: scale(1);
+}
+
+.diagplws .Diagplws_menuitem {
+	height: auto;
+	padding: 1px 5px 1px 5px;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.diagplws .mdl-button:hover {
+	box-shadow: none;
+}
+
+/**
+* La liste des anomalies et des propositions (elles sont semblables)
+*/
+.Diagplws_errorLine, .diagplws .ui-widget .Diagplws_prop_button, .diagplws .ui-widget .Diagplws_propmultiple_button {
+	display: block;
+	padding: 1px 5px 1px 5px;
+	font-size: 13px;
+	line-height: 20px;
+	letter-spacing: 0;
+	opacity: 0.87;
+}
+
+.Diagplws_errorLine:hover {
+	background-color: #eeeeee;
+}
+
+.Diagplws_errorLine {
+	text-decoration: none;
+	margin: 0;
+	font-weight: 400;
+	text-align: left;
+}

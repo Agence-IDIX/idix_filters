@@ -1,0 +1,19 @@
+img.px_nbsp {
+	border:none;
+	margin:0 1px;
+	height:.3em;
+	outline:none;
+}
+
+img.px_nbsp.nbsp {
+	width:0.25em;
+}
+
+img.px_nbsp.thinsp {
+	width:0.15em;
+}
+
+.cke_show_blocks img.px_nbsp {
+	border:1px solid #666;
+	border-top:0;
+}

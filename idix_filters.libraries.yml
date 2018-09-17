@@ -1,0 +1,9 @@
+idix_textarea:
+  version: "8.x-1.3"
+  js:
+    js/fields/idix_textarea.js: {}
+  css:
+    state:
+      css/fields/idix_textarea.css: {}
+  dependencies:
+    - ckeditor/drupal.ckeditor

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CKEditor with ProLexis</title>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+	<!-- CKEditor -->
+	<script type="text/javascript" src="../../../ckeditor.js"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+	window.onload = function(){
+		CKEDITOR.config.extraPlugins += "DiagPlWs";
+
+		CKEDITOR.replace( 'editor1',
+		{
+			toolbar: [
+				['Source','-','Save','NewPage','Preview','-','Templates'],
+				['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
+				['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+				['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+				['BidiLtr', 'BidiRtl'],
+				'/',
+				['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+				['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
+				['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+				['Link','Unlink','Anchor'],
+				['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+				'/',
+				['Styles','Format','Font','FontSize'],
+				['TextColor','BGColor'],
+				['Maximize', 'ShowBlocks','-','About'],
+				['DiagPlWs']
+			]
+		});
+
+		CKEDITOR.replace( 'editor2',
+		{
+			toolbar: [
+				['Source','-','Save','NewPage','Preview','-','Templates'],
+				['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
+				['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+				['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+				['BidiLtr', 'BidiRtl'],
+				'/',
+				['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+				['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
+				['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+				['Link','Unlink','Anchor'],
+				['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+				'/',
+				['Styles','Format','Font','FontSize'],
+				['TextColor','BGColor'],
+				['Maximize', 'ShowBlocks','-','About'],
+				['DiagPlWsEn']
+			]
+		});
+	}
+	//]]>
+	</script>
+</head>
+<body>
+	<h1>CKEditor with ProLexis</h1>
+	<form id="frm_test" action="" method="post">
+		<p>
+			Sample of ProLexis plugin in CKeditor using standard analysis or english analysis.
+		</p>
+			<label for="editor1">French:</label><br />
+			<textarea cols="80" id="editor1" name="editor1" rows="10">&lt;html&gt;&lt;/head&gt;
+			&lt;body&gt;&lt;p&gt;
+			Le 28 janvier 2011 &agrave; 9h 30 ! Et le lendemain &agrave; 9 h 30.&lt;/p&gt;
+			&lt;p&gt;
+				Elle te rap&egrave;lle. Le 28 janvier. 19 heures. Le m&egrave;re et les &eacute;lus correction.&lt;/p&gt;
+			&lt;p&gt;
+			Le 28 janvier.&lt;/p&gt;
+			&lt;/body&gt;
+			&lt;/html&gt;</textarea>
+		</p>
+		<p>
+			<label for="editor1">English:</label><br />
+			<textarea cols="80" id="editor2" name="editor2" rows="10">&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;
+			&lt;p&gt;There is mistak.&lt;/p&gt;
+			&lt;/body&gt;&lt;/html&gt;
+			</textarea>
+		</p>
+	</form>
+	<br/>
+	<div id="footer">
+		<hr />
+		<p id="copy">
+			Copyright &copy; 2017, <a href="http://www.prolexis.com/">ProLexis</a>.
+		</p>
+	</div>
+</body>
+</html>

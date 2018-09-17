@@ -1,0 +1,5 @@
+name: Idix Filters
+description: Filtres custom IDIX
+type: module
+package: IDIX
+core: 8.x
