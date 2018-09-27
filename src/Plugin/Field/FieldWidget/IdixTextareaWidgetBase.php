@@ -163,9 +163,14 @@ abstract class IdixTextareaWidgetBase extends TextareaWidget {
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
 
-    $format = \Drupal::entityTypeManager()->getStorage('filter_format')->load($element['#format']);
-    $filters = is_object($format) ? $format->get('filters') : [];
-    $editor_class = (isset($filters['filter_editor_class']) && isset($filters['filter_editor_class']['settings']['editor_class']) && !empty($filters['filter_editor_class']['settings']['editor_class'])) ? trim($filters['filter_editor_class']['settings']['editor_class']) : '';
+    $editor_class = '';
+    if(isset($element['#format']) && !empty($element['#format'])) {
+      $format = \Drupal::entityTypeManager()
+        ->getStorage('filter_format')
+        ->load($element['#format']);
+      $filters = is_object($format) ? $format->get('filters') : [];
+      $editor_class = (isset($filters['filter_editor_class']) && isset($filters['filter_editor_class']['settings']['editor_class']) && !empty($filters['filter_editor_class']['settings']['editor_class'])) ? trim($filters['filter_editor_class']['settings']['editor_class']) : '';
+    }
 
     $wordcount_enable = $this->getSetting('wordcount_enable');
 
