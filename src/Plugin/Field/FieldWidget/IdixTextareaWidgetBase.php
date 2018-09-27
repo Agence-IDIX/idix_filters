@@ -164,7 +164,7 @@ abstract class IdixTextareaWidgetBase extends TextareaWidget {
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
 
     $format = \Drupal::entityTypeManager()->getStorage('filter_format')->load($element['#format']);
-    $filters = $format->get('filters');
+    $filters = is_object($format) ? $format->get('filters') : [];
     $editor_class = (isset($filters['filter_editor_class']) && isset($filters['filter_editor_class']['settings']['editor_class']) && !empty($filters['filter_editor_class']['settings']['editor_class'])) ? trim($filters['filter_editor_class']['settings']['editor_class']) : '';
 
     $wordcount_enable = $this->getSetting('wordcount_enable');
