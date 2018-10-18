@@ -164,10 +164,26 @@ abstract class IdixTextareaWidgetBase extends TextareaWidget {
     $element = parent::formElement($items, $delta, $element, $form, $form_state);
 
     $editor_class = '';
+    $format = null;
     if(isset($element['#format']) && !empty($element['#format'])) {
       $format = \Drupal::entityTypeManager()
         ->getStorage('filter_format')
         ->load($element['#format']);
+    }else{
+      $allowed_formats = $items[$delta]->getFieldDefinition()->getThirdPartySettings('allowed_formats');
+      foreach($allowed_formats as $key => $allowed_format){
+        if($key == $allowed_format){
+          $format_name = $allowed_format;
+          $format = \Drupal::entityTypeManager()
+            ->getStorage('filter_format')
+            ->load($format_name);
+          if(is_object($format)) {
+            break;
+          }
+        }
+      }
+    }
+    if(is_object($format)){
       $filters = is_object($format) ? $format->get('filters') : [];
       $editor_class = (isset($filters['filter_editor_class']) && isset($filters['filter_editor_class']['settings']['editor_class']) && !empty($filters['filter_editor_class']['settings']['editor_class'])) ? trim($filters['filter_editor_class']['settings']['editor_class']) : '';
     }
