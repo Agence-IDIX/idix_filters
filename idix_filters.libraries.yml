@@ -7,3 +7,4 @@ idix_textarea:
       css/fields/idix_textarea.css: {}
   dependencies:
     - ckeditor/drupal.ckeditor
+    - core/drupal.ajax
