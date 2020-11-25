@@ -31,7 +31,7 @@
 }
 
 .diagplws .ui-widget, .diagplws .ui-widget input {
-    font-family: 'Open Sans', "Helvetica", sans-serif;
+	font-family: 'Open Sans', "Helvetica", sans-serif;
 }
 
 .diagplws .ui-widget-content, .diagplws .ui-widget-header {
@@ -142,7 +142,7 @@
 }
 
 #Diag_errors_container {
-	font-size: 9pt;	
+	font-size: 9pt;
 	margin: 5px;
 }
 
@@ -156,8 +156,14 @@
 	width: 196px;
 }
 
-.Diagplws_diagnosis, .Diagplws_correction, .Diagplws_props_panel .Diagplws_props-middle {
+.Diagplws_props_panel .Diagplws_props-middle {
 	height: 84px;
+}
+.Diagplws_correction {
+	height: 100px;
+}
+.Diagplws_diagnosis {
+	height: 100px;
 }
 
 .Diagplws_props_panel .Diagplws_props-middle {
@@ -196,7 +202,7 @@
 	color: transparent;
 	line-height: 0px;
 	padding-bottom: 0px;
- 	transition: line-height 1s, color 500ms, padding-bottom 1s;
+	transition: line-height 1s, color 500ms, padding-bottom 1s;
 	transition-timing-function: ease-out;
 }
 
@@ -334,6 +340,20 @@
 	background-position: -60px -46px;
 }
 
+.diagplws .ui-widget .Diagplws_btn_learn {
+	line-height: 20px;
+	height: 13px;
+	width: 13px;
+	min-width: 13px;
+	padding: 0px;
+	position: absolute;
+	right: 0px;
+	top: 5px;
+	color: #ffffff;
+	background: #7191aa url(../imgs/DiagPlWsAddDico.png) no-repeat;
+	background-size: contain;
+	border-radius: 3px 0 0 3px;
+}
 
 /**
 * Partie diagnostics
@@ -428,18 +448,22 @@
 	width: auto;
 }
 
-.diagplws .Diagplws_correction_button {
-	line-height: 18px;
-	padding: 0 8px;
+/* pour surcharger JQuery */
+.diagplws .ui-widget .Diagplws_correction_button {
 	font-size: 12px;
+}
+.diagplws .Diagplws_correction_button {
+	line-height: 20px;
+	padding: 0 8px;
 	background-color: #7cb270;
 	color: #ffffff;
 	width: 96px;
 	border-radius: 0 0 5px 5px;
+	height: 20px;
 }
 
 .diagplws .Diagplws_correction_button[disabled][disabled] {
-	background-color: #e2f2e2;
+	background-color: #bfe0ba;
 }
 .diagplws .Diagplws_correction_button:hover {
 	background-color: #bfe0ba;
@@ -452,7 +476,7 @@
 	background-color: #c9c9c9;
 }
 .diagplws .Diagplws_group_ignore .Diagplws_correction_button[disabled][disabled], .diagplws .Diagplws_group_ignore .Diagplws_correction_button.mdl-button--disabled.mdl-button--disabled {
-	background-color: #f4f4f4;
+	background-color: #c9c9c9;
 }
 
 #Diagplws_ignorer_btn, #Diagplws_correction_btn {
@@ -484,7 +508,7 @@
 #Diagplws_hostdocument {
 	/* La définition d'une position est quasi-obligatoire pour le scroll sur les erreurs
 	   En effet, les offsets de position sont données par rapport à offsetParent (parent positionné le plus proche)*/
-	position: relative;	
+	position: relative;
 	box-sizing: border-box;
 	height: 190px;
 	margin-top: 2px;
@@ -547,7 +571,7 @@ pre.Diagplws_stream {
 .Diagplws_sliderpanel {
 	width: 240px;
 	height: 34px;
-	float: right;	
+	float: right;
 }
 
 .Diagplws_slidercontainer {
@@ -632,6 +656,7 @@ pre.Diagplws_stream {
 }
 
 .Diagplws_errorLine {
+	position: relative;
 	text-decoration: none;
 	margin: 0;
 	font-weight: 400;
