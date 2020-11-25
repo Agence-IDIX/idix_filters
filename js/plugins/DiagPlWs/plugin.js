@@ -1,15 +1,14 @@
- /****************************************************/
- /************** Début configuration *****************/
- /****************************************************/
+/****************************************************/
+/************** Début configuration *****************/
+/****************************************************/
 
 // Url du proxy ou directement du WebService.
 //
-//var sDiagPlWsUrlProxy = "http://"+ location.host +"/DiagPlWs/proxies/PHP/proxyDiagPlWs.php";
 var sDiagPlWsUrlProxy = location.protocol + "//"+ location.host +"/modules/custom/idix_filters/js/plugins/DiagPlWs/proxyDiagPlWs.php";
 
 
 
- /****************************************************/
+/****************************************************/
 /*************** Fin configuration ******************/
 /****************************************************/
 
@@ -24,34 +23,34 @@ function loadJsFile(filename){
 }
 
 CKEDITOR.plugins.add('DiagPlWs',
-{
-	init: function(editor)
 	{
-		var pluginName = 'DiagPlWs';
-		editor.addCommand(pluginName, {exec: DiagPlWsCmd, modes: {wysiwyg: 1}, editorFocus: false});
-		editor.ui.addButton(pluginName, 
+		init: function(editor)
 		{
-			label: 'Analyse ProLexis',
-			command: pluginName,
-			icon: CKEDITOR.plugins.getPath('DiagPlWs') + 'core/imgs/DiagPlWsIcon.png'
-		});
+			var pluginName = 'DiagPlWs';
+			editor.addCommand(pluginName, {exec: DiagPlWsCmd, modes: {wysiwyg: 1}, editorFocus: false});
+			editor.ui.addButton(pluginName,
+				{
+					label: 'Analyse ProLexis',
+					command: pluginName,
+					icon: CKEDITOR.plugins.getPath('DiagPlWs') + 'core/imgs/DiagPlWsIcon.png'
+				});
 
-		pluginName += 'En';
-		editor.addCommand(pluginName, {exec: DiagPlWsCmdEn, modes: {wysiwyg: 1}, editorFocus: false});
-		editor.ui.addButton(pluginName, 
-		{
-			label: 'Analyse anglaise ProLexis',
-			command: pluginName,
-			icon: CKEDITOR.plugins.getPath('DiagPlWs') + 'core/imgs/DiagPlWsIcon-en.png'
-		});
+			pluginName += 'En';
+			editor.addCommand(pluginName, {exec: DiagPlWsCmdEn, modes: {wysiwyg: 1}, editorFocus: false});
+			editor.ui.addButton(pluginName,
+				{
+					label: 'Analyse anglaise ProLexis',
+					command: pluginName,
+					icon: CKEDITOR.plugins.getPath('DiagPlWs') + 'core/imgs/DiagPlWsIcon-en.png'
+				});
 
-		// Chargement en évitant de le faire deux fois.
-		//
-		if (typeof top.DiagPlWs == "undefined") {
-			loadJsFile(CKEDITOR.plugins.getPath('DiagPlWs') + 'core/DiagPlWs.js');
+			// Chargement en évitant de le faire deux fois.
+			//
+			if (typeof top.DiagPlWs == "undefined") {
+				loadJsFile(CKEDITOR.plugins.getPath('DiagPlWs') + 'core/DiagPlWs.js');
+			}
 		}
-	}
-});
+	});
 
 
 function DiagPlWsCommon(editor, diagPlWsCallBack, lang)
@@ -76,33 +75,17 @@ function DiagPlWsCommon(editor, diagPlWsCallBack, lang)
 	top.DiagPlWs.init({
 		sUrlProxy: sDiagPlWsUrlProxy,
 		sCorePath: CKEDITOR.plugins.getPath('DiagPlWs') + 'core',
+		supportLearn : false, // Cache le bouton des soumissions, par défaut est égal à true
 		hCallBack: diagPlWsCallBack
 	});
 
 	// Lancement de l'analyse du texte
 	//
 	top.DiagPlWs.analyze([{
-		src: editor.document.$.body,
-		type: "DOM"
-	}],
-	{language: lang});
-
-	setTimeout(function() {
-		// Initialisation
-		//
-		top.DiagPlWsLoader().init({
-			sUrlProxy: sDiagPlWsUrlProxy,
-			sCorePath: CKEDITOR.plugins.getPath('DiagPlWs') + 'core',
-			sourceId: editor.document.$.body,
-			hCallBack: DiagPlWsCallBack,
-			sEditor: "CKEditor",
-			oWindow: window
-		});
-
-		// Lancement de l'analyse du texte
-		//
-		top.DiagPlWsLoader().analyze();
-	}, 300);
+			src: editor,
+			type: "ckeditor"
+		}],
+		{language: lang});
 }
 
 
@@ -120,13 +103,4 @@ function DiagPlWsCmd(editor, diagPlWsCallBack)
 function DiagPlWsCmdEn(editor, diagPlWsCallBack)
 {
 	DiagPlWsCommon(editor, diagPlWsCallBack, "en");
-}
-
-
- /**
-  * Callback
-  */
-function DiagPlWsCallBack() {
-	// Implement uncleaner NBSP
-	if(editor.plugins.px_nbsp) editor.plugins.px_nbsp.unCleanDataEditor(editor);
 }
